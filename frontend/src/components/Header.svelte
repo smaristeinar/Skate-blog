@@ -11,11 +11,16 @@
         <li><button class="nav-button">
             <a href="/">Home</a>
         </button></li>
-    </ul>
-        <ul>
         <li><button class="nav-button">
-            <a href="/">Home</a>
+            <a href="/">Posts</a>
         </button></li>
+         <li><button class="nav-button">
+            <a href="/">Videos</a>
+        </button></li>
+        <li><button class="nav-button">
+            <a href="/">About</a>
+        </button></li>
+
     </ul>
 </nav>
 </div>
