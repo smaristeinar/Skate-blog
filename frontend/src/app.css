@@ -1,4 +1,30 @@
+:root{
+  font-size: 16px;
+  --text-xs: 0.75rem; /*      12 px */
+  --text-sm: 0.875rem; /*     14 px */
+  --text-base: 1rem; /*       16 px */
+  --text-lg: 1.125rem; /*     18 px */
+  --text-2xl: 1.5rem; /*      24 px */
+  --text-3xl: 1.875rem; /*    30 px */
+  --text-4xl: 2.25rem; /*     36 px */
+  --text-5xl: 3rem; /*        48 px */
+  --text-6xl: 3.75rem; /*     60 px */
+  --text-7xl: 4.5rem; /*      72 px */
+  --text-9xl: 6rem; /*        96 px */
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  src: url('./fonts/NotoSans-Regular.ttf') format('truetype');   
+}
+
+
 *{
     margin: 0;
     padding: 0;
+}
+
+p, h1{
+    font-family: "NotoSans" ;
+    
 }
