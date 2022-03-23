@@ -2,6 +2,7 @@
 export let post:any;
 </script>
 
+<a href="/post/{post.id}">
 <div class="post">
 <img src="{post.thumbnail.url}" alt="" width="250px" height="200px">
 <div class="post-overlay">
@@ -12,6 +13,8 @@ export let post:any;
 </div>
 <h1>{post.title}</h1>
 </div>
+</a>
+
 
 <style>
 .post{
