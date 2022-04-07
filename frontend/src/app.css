@@ -15,7 +15,7 @@
 
 @font-face {
   font-family: 'NotoSans';
-  src: url('./fonts/NotoSans-Regular.ttf') format('truetype');   
+  src: url('./fonts/NotoSans-Regular.ttf') format('ttf');   
 }
 
 
@@ -28,3 +28,5 @@ p, h1{
     font-family: "NotoSans" ;
     
 }
+
+p > image { visibility: hidden;}

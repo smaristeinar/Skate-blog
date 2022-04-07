@@ -4,7 +4,8 @@ export let post:any;
 
 <a href="/post/{post.id}">
 <div class="post">
-<img src="{post.thumbnail.url}" alt="" width="250px" height="200px">
+
+<img src="{post.thumbnail.url}" class="thumbnail" alt="">
 <div class="post-overlay">
     <h1>{post.title}</h1>
     {#if post.shortDescription}
@@ -20,7 +21,15 @@ export let post:any;
 .post{
  position: relative;
  color: black;
- text-align: center;
+}
+
+h1{
+    font-size: var(--text-lg);
+    text-decoration: none;
+}
+
+.thumbnail{
+    width: 100%;
 }
 .post-overlay{
     display: flex;
@@ -37,7 +46,7 @@ export let post:any;
 }
 
 .post:hover > .post-overlay{
-    visibility: visible;
+    
 }
 
 </style>

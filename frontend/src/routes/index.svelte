@@ -1,7 +1,7 @@
 <script context="module">
  export async function load({fetch}) {
     console.log("loading");
-    const url = "api/getmockdata";
+    const url = "/api/getmockdata";
     const response = await fetch(url);
 
     return {
