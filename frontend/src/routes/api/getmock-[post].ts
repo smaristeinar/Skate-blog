@@ -18,6 +18,7 @@ async function fetchData(id:any){
       }
       id
       createdAt
+      tags
     }
   }`
 

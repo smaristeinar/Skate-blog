@@ -16,6 +16,11 @@
 <script lang="ts">
 import { render as renderer } from 'datocms-structured-text-to-html-string'
 export let article;
+import Splitter from "$lib/Spliter.svelte"
+import Spliter from '$lib/Spliter.svelte';
+
+console.log(article.data.post.tags[0]);
+
 
 const formatDate = (date) => {
   let d = new Date(date);
@@ -30,8 +35,6 @@ const formatDate = (date) => {
   }
   return [year, month, day].join('-');
 }
-console.log(formatDate('Febuary 1, 2021'));
-
 
 const options = {
   renderBlock({ record, adapter: { renderNode } }) {
@@ -39,8 +42,6 @@ const options = {
   }
 };
 
-
-console.log(renderer(article.data.post.post, options));
 </script>
 
 
@@ -49,8 +50,22 @@ console.log(renderer(article.data.post.post, options));
 <h1>{article.data.post.title}</h1>
  <p>{formatDate(article.data.post.createdAt)} | SkateBlog </p>
 </div>
+
+<Splitter />
+
 <div class="content">
 {@html renderer(article.data.post.post, options)}
+</div>
+
+<Spliter />
+
+<div class="tags-wrapper">
+<div class="tags">
+<p>Tags:</p>
+ {#each article.data.post.tags as tag}
+  <p class="tag">#{tag}</p> 
+ {/each}
+</div>
 </div>
 </article>
 
@@ -62,6 +77,7 @@ font-family: "NotoSans";
 
 .content :global(img){
   max-width: 100%;
+  padding-top: 5px;
 }
 
 .title{
@@ -78,5 +94,25 @@ flex-direction: column;
 align-items: center;
 padding: 1em;
 gap: 10px;
+}
+
+.tags-wrapper{
+  display: flex;
+  width: 100%;
+
+}
+
+.tags{
+  display: flex;
+  align-items: center;
+}
+
+.tag{
+display: block;
+text-align: center;
+padding: 2px 10px 2px 10px;
+margin-left: 10px;
+background-color: rgb(160, 156, 156);
+border-radius: 5px;
 }
 </style>

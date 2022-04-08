@@ -15,7 +15,7 @@
 
 @font-face {
   font-family: 'NotoSans';
-  src: url('./fonts/NotoSans-Regular.ttf') format('ttf');   
+  src: url('/fonts/NotoSans-Regular.ttf') format('truetype');   
 }
 
 
@@ -29,4 +29,7 @@ p, h1{
     
 }
 
-p > image { visibility: hidden;}
+button{
+    background-color: inherit;
+    border: inherit;  
+}

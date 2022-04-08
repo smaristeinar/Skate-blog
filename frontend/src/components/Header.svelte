@@ -1,104 +1,90 @@
-<nav>
-<div class="hamburger-menu">
-    <div id="menu__toggle"> 
-      <span></span> 
-      <span></span>
-      <span></span>
-    <div>
-   
+<script>
+ let active = false
+ let searchActive = false
+ import Animatedburger from '$lib/Animatedburger.svelte'
+ import Spliter from '$lib/Spliter.svelte'
+ import Search from "$lib/Search.svelte"
+</script>
 
-    <ul class="menu__box">
-      <li><a class="menu__item" href="/">Home</a></li>
-			<li><a class="menu__item" href="#">About</a></li>
-			<li><a class="menu__item" href="#">Team</a></li>
-			<li><a class="menu__item" href="#">Contact</a></li>
-			<li><a class="menu__item" href="#">Twitter</a></li>
-    </ul>
+<nav>
+<div class="nav-bar">
+<div on:click={()=>{active = !active}}>
+<Animatedburger open={active} width="45px" />
 </div>
 <h1>SkateBlog</h1>
+{#if !active}
+<button on:click={()=>{searchActive = !searchActive}}>
+  <img src="/static/img/{!searchActive ? "search.svg": "cross.svg"}" alt="" srcset="">  
+</button> 
+{/if}
+
+</div>
+
+{#if searchActive}
+  <Search />
+{/if}
+
+{#if !active}
+  <Spliter /> 
+{/if}
+<div class="nav-menu" class:nav-menu-toggle={active} >
+<ul>
+  <li><a on:click={()=>{active = !active}} href="/">Home</a></li>
+  <li><a on:click={()=>{active = !active}} href="/">Posts</a></li>
+  <li><a on:click={()=>{active = !active}} href="/">Videos</a></li>
+</ul>
+</div>
 </nav>
 
 <style>
 nav{
     position: sticky;
     top: 0;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: #CFD8DC;
-}
-h1{
-  
+    z-index: 1000;
 }
 
-#menu__toggle {
-  opacity: 0;
+
+.nav-bar{
+    position: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color:white;
+    z-index: 999;
 }
-#menu__toggle + .menu__btn > span {
-  transform: rotate(45deg);
-}
-#menu__toggle + .menu__btn > span::before {
-  top: 0;
-  transform: rotate(0deg);
-}
-#menu__toggle + .menu__btn > span::after {
-  top: 0;
-  transform: rotate(90deg);
-}
-#menu__toggle ~ .menu__box {
-  left: 0 !important;
-}
-.menu__btn {
-  width: 26px;
-  height: 26px;
-  cursor: pointer;
-}
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  width: 26px;
-  z-index: 2;
-  background-color: #616161;
-  transition-duration: .25s;
-}
-.menu__btn > span::before {
-  content: '';
-  top: -8px;
-}
-.menu__btn > span::after {
-  content: '';
-  top: 8px;
-}
-.menu__box {
-  display: block;
+
+.nav-menu{
   position: fixed;
-  top: 0;
-  left: -100%;
-  width: 100%;
+  top:0;
   height: 100%;
-  margin: 0;
-  padding: 80px 0;
-  list-style: none;
-  background-color: #ECEFF1;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
-  transition-duration: .25s;
+  width: 100%;
+  z-index: 500;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
 }
-.menu__item {
-  display: block;
-  padding: 12px 24px;
-  color: #333;
-  font-family: 'Roboto', sans-serif;
-  font-size: 20px;
-  font-weight: 600;
+
+.nav-menu-toggle{
+  visibility: visible;
+}
+
+.nav-menu > ul{
+  font-size: var(--text-5xl);
   text-decoration: none;
-  transition-duration: .25s;
-  text-align: center;
+  list-style: none;
 }
-.menu__item:hover {
-  background-color: #CFD8DC;
-}   
+
+li{
+  margin-top: 25px;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: black;
+}
+
 </style>
