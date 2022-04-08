@@ -16,8 +16,8 @@
 <script lang="ts">
 import { render as renderer } from 'datocms-structured-text-to-html-string'
 export let article;
-import Splitter from "$lib/Spliter.svelte"
-import Spliter from '$lib/Spliter.svelte';
+
+import Spliter from '../../lib/Spliter.svelte';
 
 console.log(article.data.post.tags[0]);
 
@@ -51,7 +51,7 @@ const options = {
  <p>{formatDate(article.data.post.createdAt)} | SkateBlog </p>
 </div>
 
-<Splitter />
+<Spliter />
 
 <div class="content">
 {@html renderer(article.data.post.post, options)}

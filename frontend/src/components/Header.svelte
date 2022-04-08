@@ -1,9 +1,9 @@
 <script>
  let active = false
  let searchActive = false
- import Animatedburger from '$lib/Animatedburger.svelte'
- import Spliter from '$lib/Spliter.svelte'
- import Search from "$lib/Search.svelte"
+ import Animatedburger from "../lib/AnimatedBurger.svelte"
+ import Spliter from '../lib/Spliter.svelte'
+ import Search from "../lib/Search.svelte"
 </script>
 
 <nav>

@@ -1,5 +1,5 @@
 <script>
-    import Spliter from "$lib/Spliter.svelte";
+    import Spliter from "../lib/Spliter.svelte";
 </script>
 
 <Spliter />
