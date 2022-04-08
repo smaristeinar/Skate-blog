@@ -6,7 +6,7 @@
     <div class="search-box">
          <input  type="text">
          <button>
-         <img src="/static/img/search.svg" alt="" srcset="">  
+         <img src="../../static/img/search.svg" alt="" srcset="">  
 </button> 
     </div>
 </div>

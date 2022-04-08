@@ -14,7 +14,7 @@
 <h1>SkateBlog</h1>
 {#if !active}
 <button on:click={()=>{searchActive = !searchActive}}>
-  <img src="/static/img/{!searchActive ? "search.svg": "cross.svg"}" alt="" srcset="">  
+  <img src="../../static/img/{!searchActive ? "search.svg": "cross.svg"}" alt="" srcset="">  
 </button> 
 {/if}
 
