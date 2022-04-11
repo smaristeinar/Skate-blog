@@ -1,0 +1,12 @@
+name = "skate-blog"
+type = "javascript"
+
+account_id = "f19fdf494e14ee3db8c2cd7c37061986"
+workers_dev = true
+route = "./src"
+zone_id = ""
+compatibility_date = "2022-03-24"
+
+kv_namespaces = [ 
+  { binding = "TEST", id = "959b4c7668b648798d9de8f5e59efe2d",  preview_id = "959b4c7668b648798d9de8f5e59efe2d" }
+]
