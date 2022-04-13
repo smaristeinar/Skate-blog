@@ -12,27 +12,34 @@ async function handleRequest(request) {
   const datoUrl = 'https://graphql.datocms.com/'
 
   const myQuery = `{
-  allVideos {
-    videoLink {
+    allPosts {
+      createdAt
+      id
+      post {
+        links
+        value
+        blocks {
+          id
+          image {
+            url
+            video {
+              streamingUrl
+            }
+          }
+        }
+      }
+      video
+      title
+      tags
+      shortDescription
+      thumbnail {
+        url
+      }fffffffffff
+      videoLink {
+      url
       thumbnailUrl
-      url
     }
-    id
-    shortDescription
-    textContent
-    title
-    createdAt
-  }
-  allPosts {
-    id
-    title
-    shortDescription
-    createdAt
-    thumbnail {
-      url
     }
-    content
-  }
 }`
 
   const datoRequest = await fetch(datoUrl, {
@@ -46,14 +53,17 @@ async function handleRequest(request) {
   })
 
   let datoResponse =  await datoRequest.json() 
-  console.log(datoResponse);
-  /*await datoResponse.data.allPosts.forEach(post => {
+  console.log(await datoResponse);
+  await datoResponse.data.allPosts.forEach(post => {
+    if(true){
         TEST.put(post.id, JSON.stringify(post));
         console.log(post.id, post, "bing bong");
+        console.log("---------------------------------------------")
+    }
     });
-*/
 
-  return new Response(JSON.stringify(datoResponse), {
+
+  return new Response(JSON.stringify(await datoResponse), {
     headers: { 'content-type': 'text/plain' },
   })
 }
