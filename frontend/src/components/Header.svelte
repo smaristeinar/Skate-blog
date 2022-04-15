@@ -98,7 +98,6 @@ nav{
 
 li{
   margin-top: 25px;
-  
 }
 
 a {
