@@ -20,7 +20,7 @@ function flipActive(){
 <div class="open-nav"on:click={()=>{active = !active}}>
 <Animatedburger open={active} width="45px" />
 </div>
-<img class="site-logo" src="../../static/img/logo2.svg" height="50px" width="150px" alt="skateblog logo">
+<img class="site-logo" src="/images/logo2.svg" height="50px" width="150px" alt="skateblog logo">
 
 <div class="nav-menu" class:nav-menu-toggle={active} >
 <ul>
@@ -32,7 +32,7 @@ function flipActive(){
 
 {#if !active}
 <button class="search" on:click={()=>{searchActive = !searchActive}}>
-  <img src="../../static/img/{!searchActive ? "search.svg": "cross.svg"}" alt="" srcset="">  
+  <img src="/images/{!searchActive ? "search.svg": "cross.svg"}" alt="" srcset="">  
 </button> 
 {/if}
 

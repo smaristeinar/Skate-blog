@@ -4,7 +4,7 @@
 
 <Spliter />
 <footer>
-    <img  width="200px" src="../../static/img/logo-slant.svg" alt="skateblog logo">
+    <img  width="200px" src="/images/logo-slant.svg" alt="skateblog logo">
 </footer>
 
 <style>

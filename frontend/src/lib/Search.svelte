@@ -19,7 +19,7 @@
 				await search(inputValue);
 			}}
 		>
-			<img src="../../static/img/search.svg" alt="" srcset="" />
+			<img src="/images/search.svg" alt="" srcset="" />
 		</button>
         {#if resaults.length }
 		<div class="resaults">
