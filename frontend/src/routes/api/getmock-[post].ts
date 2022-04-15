@@ -16,9 +16,13 @@ async function fetchData(id:any){
           id
         }
       }
-      id
+      id  
       createdAt
       tags
+      videoLink {
+        providerUid
+      }
+      video
     }
   }`
 

@@ -1,20 +1,19 @@
-  async function fetchData(){
+async function fetchData(value:any){
   const datoToken = '45d3feff8f1aa49044bf21b6aab5bc'
   const datoUrl = 'https://graphql.datocms.com/'
   const datoQuery = `
   {
-  allPosts {
-    id
-    createdAt
-    shortDescription
+  allPosts(filter: {OR: {title: {matches: {pattern: "${value}"}}}}) {
     thumbnail {
       url
     }
     title
+    shortDescription
+    video
     videoLink {
       thumbnailUrl
     }
-    video
+    id
   }
   }`
 
@@ -34,9 +33,9 @@
 
   const datoCMSResponse: any = await datoRequest.json()
 
-return await datoCMSResponse
+  return await datoCMSResponse
 }
 
-export async function get() { 
-   return {body: await fetchData()} 
-}
+export async function get({ params }) {
+   return {body : await fetchData(params.value)} 
+} 

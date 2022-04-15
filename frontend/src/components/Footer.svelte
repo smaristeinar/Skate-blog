@@ -4,7 +4,7 @@
 
 <Spliter />
 <footer>
-    <p>SkateBlog</p>
+    <img  width="200px" src="../../static/img/logo-slant.svg" alt="skateblog logo">
 </footer>
 
 <style>
@@ -13,10 +13,11 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
+        height: auto;
         background-color: rgba(199, 188, 188, 0.205);
     }
 
-    p{
+    img{
         padding: 50px;
     }
 </style>

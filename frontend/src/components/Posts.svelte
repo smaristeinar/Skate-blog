@@ -16,4 +16,14 @@ section{
    padding: 1em;
 }
 
+@media (min-width: 768px) {
+
+section{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+
+
+}
+
 </style>

@@ -13,11 +13,15 @@
 </script>
 
 <script lang="ts">
-
+import FeaturePost from "../components/FeaturePost.svelte";
 import Posts from "../components/Posts.svelte"; 
-export let article:Response
-
+export let article:any
 </script>
 
+<FeaturePost post={article.data.allPosts[0]}/>
 <Posts posts={article}/>
 
+
+<style>
+
+</style>

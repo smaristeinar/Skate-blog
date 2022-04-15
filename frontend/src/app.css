@@ -17,7 +17,15 @@
   font-family: 'NotoSans';
   src: url('/fonts/NotoSans-Regular.ttf') format('truetype');   
 }
+@font-face {
+  font-family: "Anton";
+  src: url("/fonts/Anton-Regular.ttf") format("truetype");
+}
 
+
+body, html{
+  height: 100%;
+}
 
 *{
     margin: 0;
@@ -33,3 +41,11 @@ button{
     background-color: inherit;
     border: inherit;  
 }
+
+
+	a:link,
+	a:visited {
+		text-decoration: none;
+		color: black;
+    font-family: "Anton";
+	}

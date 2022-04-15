@@ -19,7 +19,6 @@ export let article;
 
 import Spliter from '../../lib/Spliter.svelte';
 
-console.log(article.data.post.tags[0]);
 
 
 const formatDate = (date) => {
@@ -46,6 +45,12 @@ const options = {
 
 
 <article>
+  {#if article.data.post.video}
+  <div class="video-wrapper">
+  <iframe class="video" src="https://www.youtube.com/embed/{article.data.post.videoLink.providerUid}" width="750" height="563" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  {/if}
+
 <div class="title">
 <h1>{article.data.post.title}</h1>
  <p>{formatDate(article.data.post.createdAt)} | SkateBlog </p>
@@ -58,7 +63,6 @@ const options = {
 </div>
 
 <Spliter />
-
 <div class="tags-wrapper">
 <div class="tags">
 <p>Tags:</p>
@@ -73,6 +77,9 @@ const options = {
 .content :global(p){
 font-size: var(--text-lg);
 font-family: "NotoSans";
+margin-block-start: 1em;
+margin-block-end: 1em;
+
 }
 
 .content :global(img){
@@ -80,12 +87,31 @@ font-family: "NotoSans";
   padding-top: 5px;
 }
 
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .title{
 padding-bottom: 10px;
+align-self: start;
+
+
 }
+
 .title > h1{
-  font-size: var(--text-5xl);
+  font-size: var(--text-4xl);
   padding-bottom: 5px;
+  word-wrap: break-word;
+  max-width: 200px;
 }
 
 article{
@@ -94,17 +120,22 @@ flex-direction: column;
 align-items: center;
 padding: 1em;
 gap: 10px;
+box-sizing: border-box;
+
 }
 
 .tags-wrapper{
   display: flex;
-  width: 100%;
+  flex-wrap:wrap-reverse;
+align-self: start;
 
 }
 
 .tags{
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+
 }
 
 .tag{
@@ -112,7 +143,17 @@ display: block;
 text-align: center;
 padding: 2px 10px 2px 10px;
 margin-left: 10px;
+margin-top: 2px;
 background-color: rgb(160, 156, 156);
 border-radius: 5px;
+}
+
+
+@media (min-width: 500px) {
+
+  .title > h1{
+    max-width: 700px;
+  }
+
 }
 </style>

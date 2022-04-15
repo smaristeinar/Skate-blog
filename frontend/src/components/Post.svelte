@@ -5,12 +5,10 @@ export let post:any;
 <a href="/post/{post.id}">
 <div class="post">
 
-<img src="{post.thumbnail.url}" class="thumbnail" alt="">
+<img src="{post.video ? post.videoLink.thumbnailUrl : post.thumbnail.url}" class="thumbnail" alt="">
 <div class="post-overlay">
     <h1>{post.title}</h1>
-    {#if post.shortDescription}
-    <p>{post.shortDescription}</p>
-    {/if}
+    <p>{post?.shortDescription}</p>
 </div>
 <h1>{post.title}</h1>
 </div>
@@ -21,11 +19,13 @@ export let post:any;
 .post{
  position: relative;
  color: black;
+
 }
 
 h1{
     font-size: var(--text-lg);
     text-decoration: none;
+    overflow: hidden;
 }
 
 .thumbnail{
@@ -35,18 +35,34 @@ h1{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 250px;
-    height: 200px;
+    width: 300px;
+    height: 169px;
+    overflow: hidden;
     position:  absolute;
     top: 0;
     z-index: 22;
     background-color: rgba(0, 0, 0, 0.589);
     visibility: hidden;
     color: whitesmoke;
+    text-align: center;
 }
 
-.post:hover > .post-overlay{
-    
+
+
+@media (min-width: 768px) {
+    .thumbnail{
+        width: 300px;
+        height: 169px;
+    }
+
+    .post:hover > .post-overlay{
+    visibility: visible;
+    }
+
+    h1{
+        width: 300px;
+    }
+
 }
 
 </style>
