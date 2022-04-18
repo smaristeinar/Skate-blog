@@ -2,8 +2,13 @@
 
 
  export async function load({fetch, params}) {
-    console.log("loading");
-    const url = "/api/getmock-" + params.type + "-" + params.id;
+    let url 
+    if(params.type == "video"){
+      url = "/api/getVideo-" + params.id
+    }else{
+      url= "/api/getPost" + params.id
+    }
+    
     const response = await fetch(url);
     return {
       props: {

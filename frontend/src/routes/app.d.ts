@@ -9,7 +9,7 @@ declare namespace App {
 	interface Platform {
 			env: {
 			POSTS: "POSTS";
-			VODEPS: "VIDEOS"
+			VIDEOS: "VIDEOS"
 			TUMBNAILS: "TUMBNAILS"
 		};
 		context: {
