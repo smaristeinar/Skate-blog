@@ -8,7 +8,7 @@ declare namespace App {
 
 	interface Platform {
 			env: {
-			COUNTER: DurableObjectNamespace;
+			POST: "post";
 		};
 		context: {
 			waitUntil(promise: Promise<any>): void;
