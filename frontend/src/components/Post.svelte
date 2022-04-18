@@ -2,7 +2,7 @@
 export let post:any;
 </script>
 
-<a href="/post/{post.video ? "video": "post"}-{post.id}">
+<a href="/post/{post.video ? "video-": "post-"}{post.id}">
 <div class="post">
 
 <img src="{post.video ? post.videoLink.thumbnailUrl : post.thumbnail.url}" class="thumbnail" alt="">
