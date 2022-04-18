@@ -8,7 +8,7 @@ declare namespace App {
 
 	interface Platform {
 			env: {
-			POST: "post";
+			POST: "Skata-blog-posts";
 		};
 		context: {
 			waitUntil(promise: Promise<any>): void;
