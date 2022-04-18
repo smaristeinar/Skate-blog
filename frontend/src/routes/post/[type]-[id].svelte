@@ -6,9 +6,9 @@
     if(params.type == "video"){
       url = "/api/getVideo-" + params.id
     }else{
-      url= "/api/getPost" + params.id
+      url= "/api/getPost-" + params.id
     }
-    
+
     const response = await fetch(url);
     return {
       props: {
