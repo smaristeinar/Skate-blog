@@ -45,6 +45,15 @@ async function fetchData(id:any){
 return await datoCMSResponse
 }
 
-export async function get({ params }) {
-   return {body: await fetchData(params.post)} 
+export async function get({platform, params }) {
+  let post 
+  
+  if(params.type == "post"){
+    post = await platform.env.post.get(`${params.post}`, { type: 'json' });
+  }
+  else{
+    post = await platform.env.video.get(`${params.post}`, { type: 'json' })
+  }
+   
+   return {body: await post} 
 }
