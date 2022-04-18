@@ -47,7 +47,7 @@ const options = {
 <article>
   {#if article.data.post.video}
   <div class="video-wrapper">
-  <iframe class="video" src="https://www.youtube.com/embed/{article.data.post.videoLink.providerUid}" width="750" height="563" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="video" src="https://www.youtube.com/embed/{article.data.post.videoLink.providerUid}"  height="400" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   {/if}
 
@@ -87,17 +87,12 @@ margin-block-end: 1em;
   padding-top: 5px;
 }
 
-.video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  height: 0;
-}
+
+
 .video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+  aspect-ratio: 16 / 9;
   width: 100%;
-  height: 100%;
+
 }
 
 .title{

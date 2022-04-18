@@ -150,8 +150,8 @@ gap: 10px;
 font-size: 25px;
 }
 
-ul > li {
-
+ a:hover {
+color: rgb(107, 107, 107);
 }
 
 .open-nav{

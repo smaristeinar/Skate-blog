@@ -8,8 +8,8 @@
 			src={post.video ? post.videoLink.thumbnailUrl : post.thumbnail.url}
 			class="thumbnail"
 			alt=""
-			height="300px"
-			width="350px"
+			height="350px"
+			width="500px"
 		/>
 
 		<div class="desc">
@@ -39,6 +39,11 @@
         .desc{
             width: 350px;
         }
+
+		.desc > h1{
+			overflow-wrap: break-word;
+        max-width: 100%;
+		}
 
 		.fetaure-post > a {
 			display: flex;
