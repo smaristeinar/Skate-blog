@@ -56,8 +56,8 @@ export async function get({platform, params}) {
     post = await platform.env.VIDEOS.get(`${params.post}`, { type: 'json' })
   } 
 
-  if(post){
-    return {body: await post}
-  }
+
+   return {body: await post}
+  
    
 }
