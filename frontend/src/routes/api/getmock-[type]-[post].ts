@@ -56,8 +56,8 @@ export async function get({platform}) {
   }
   */ 
 
-  /*let stuff =  await platform.env.post.get("1652935", { type: 'json' })
-  console.log(stuff);*/
+  let stuff =  await platform.env.post.get("1652935", { type: 'json' })
+  console.log(stuff);
     
   return {body:  "hello"} 
 }
