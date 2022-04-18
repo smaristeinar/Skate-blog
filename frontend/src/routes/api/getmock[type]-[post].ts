@@ -62,12 +62,12 @@ export async function get({params,platform}) {
   
   if(params.type == "post"){
     post = await platform.env.POSTS.get(`${params.post}`, { type: 'json' });
-    return {body: params.type}
   }
 
   else{
     post = await platform.env.VIDEOS.get(`${params.post}`, { type: 'json' })
     return {body: await post}
   } 
-   
+
+   return {body: params.type}
 }
