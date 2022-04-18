@@ -45,7 +45,19 @@
 return await datoCMSResponse
 }*/
 
-export async function get({platform, params}) {
+/*function getPost({params}, id){
+  if(params.type == "post"){
+    post = await platform.env.POSTS.get(`${params.post}`, { type: 'json' });
+    return {body: await post}
+  }
+
+  else{
+    post = await platform.env.VIDEOS.get(`${params.post}`, { type: 'json' })
+    return {body: await post}
+  } 
+}*/
+
+export async function get({platform}, {params}) {
   let post 
   
   if(params.type == "post"){
