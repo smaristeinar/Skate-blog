@@ -56,5 +56,5 @@ export async function get({platform, params }) {
     post = await platform.env.video.get(`${params.post}`, { type: 'json' })
   }
   */ 
-   return {body: await await platform.env.post.get(`${params.post}`, { type: 'json' })} 
+   return {body: await await platform.env.POST.get(`${params.post}`, { type: 'json' })} 
 }
