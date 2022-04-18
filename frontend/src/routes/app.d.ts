@@ -9,6 +9,8 @@ declare namespace App {
 	interface Platform {
 			env: {
 			POSTS: "POSTS";
+			VODEPS: "VIDEOS"
+			TUMBNAILS: "TUMBNAILS"
 		};
 		context: {
 			waitUntil(promise: Promise<any>): void;
