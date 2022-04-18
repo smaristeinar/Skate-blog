@@ -1,0 +1,20 @@
+name = "skateblog"
+type = "javascript"
+zone_id = ""
+account_id = "f19fdf494e14ee3db8c2cd7c37061986"
+route = ""
+workers_dev = true
+compatibility_date = "2022-04-18"
+
+kv_namespaces = [ 
+  { binding = "POSTS", id = "959b4c7668b648798d9de8f5e59efe2d",  preview_id = "959b4c7668b648798d9de8f5e59efe2d" },
+  { binding = "VIDEOS", id = "799a849b737e42eb88f1bbeb1c88ffef", preview_id = "799a849b737e42eb88f1bbeb1c88ffef"},
+  { binding = "THUMBNAILS", id = "0bf57a7f6a9942a299ac17b70802ea1b", preview_id = "0bf57a7f6a9942a299ac17b70802ea1b"}
+]
+
+
+[build]
+command = "npm install && npm run build"
+[build.upload]
+format = "service-worker"
+
