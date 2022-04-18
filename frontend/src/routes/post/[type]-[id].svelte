@@ -3,7 +3,7 @@
 
  export async function load({fetch, params}) {
     console.log("loading");
-    const url = "/api/getmock-" + params.id;
+    const url = "/api/getmock-" + params.type + "-" + params.id;
     const response = await fetch(url);
     return {
       props: {
