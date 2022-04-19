@@ -1,9 +1,10 @@
 async function getThumbnails(keys, {platform}){
 let thumbnails = []
 await keys.forEach(async tumbnail => {
-       thumbnails.push(await platform.env.TUMBNAILS.get(tumbnail.name, {type: "json"}))
+      let thumbnailData = await platform.env.TUMBNAILS.get(tumbnail.name, {type: "json"})
+       thumbnails.push(await thumbnailData)
       })
-return thumbnails
+      return thumbnails
 }
 
 export async function get({platform}) {
