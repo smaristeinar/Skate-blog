@@ -1,11 +1,12 @@
-export async function get({platform}) {
-      let tumbNails = []
-     const values = await platform.env.TUMBNAILS.list();
-     console.log(values.keys[0].name)
-     await values.keys.forEach(async tumbnail => {
-       tumbNails.push(await platform.env.THUMBNAILS.get(tumbnail.name, {type: "json"}))
-      });
+async function getThumbnails(keys, {platform}){
+let thumbnails = []
+await keys.forEach(async tumbnail => {
+       thumbnails.push(await platform.env.THUMBNAILS.get(tumbnail.name, {type: "json"}))
+      })
+return thumbnails
+}
 
-     console.log(values);
-     return {body: await values.keys} 
+export async function get({platform}) {
+     const values = await platform.env.TUMBNAILS.list();
+     return {body: await getThumbnails(values.keys, {platform})} 
   }
