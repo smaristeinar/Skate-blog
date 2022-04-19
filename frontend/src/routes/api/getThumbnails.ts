@@ -11,7 +11,7 @@ export async function get({platform}) {
    const values = await platform.env.TUMBNAILS.list();
    let items = [];
    values.keys.forEach(element => {
-      items.push(element)
+      items.push(await platform.env.TUMBNAILS.get(element.name, { type: "json" }))
    });  
 
    if(items.length){return { body: await items}}
