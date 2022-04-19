@@ -10,7 +10,7 @@ await keys.forEach(async tumbnail => {
 export async function get({platform}) {
    const values = await platform.env.TUMBNAILS.list();
    let items = [];
-   values.keys.forEach(element => {
+   values.keys.forEach(async element => {
       items.push(await platform.env.TUMBNAILS.get(element.name, { type: "json" }))
    });  
 
