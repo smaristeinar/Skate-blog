@@ -7,5 +7,5 @@ export async function get({platform}) {
       });
 
      console.log(values);
-     return {body: await tumbNails} 
+     return {body: await values.keys} 
   }
