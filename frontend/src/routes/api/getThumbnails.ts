@@ -35,7 +35,7 @@ export async function get({platform}) {
  list.forEach(async item => {
     console.log(item.name);
     
-   items.push(await platform.env.TUMBNAILS.get(`${item.name}`, { type: "json" }))
+   items.push( item.name/*await platform.env.TUMBNAILS.get(`${item.name}`, { type: "json" })*/)
 })
 
 
