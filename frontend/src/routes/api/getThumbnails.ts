@@ -9,8 +9,13 @@ await keys.forEach(async tumbnail => {
 
 export async function get({platform}) {
    const values = await platform.env.TUMBNAILS.list();
-   return { body: await getThumbnails(await values.keys,{platform})}
-  }
+   let items = [];
+   values.keys.forEach(element => {
+      items.push(element)
+   });  
+
+   if(items.length){return { body: await items}}
+}
 
   /**platform.env.TUMBNAILS.get(values.keys[0].name, { type: "json" })
  */
