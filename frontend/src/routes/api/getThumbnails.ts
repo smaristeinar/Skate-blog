@@ -34,13 +34,14 @@ export async function get({platform}) {
  let items = [];
  list.forEach(async item => {
     console.log(item.name);
-    
-   items.push( item.name/*await platform.env.TUMBNAILS.get(`${item.name}`, { type: "json" })*/)
+   items.push(await platform.env.TUMBNAILS.get(`${item.name}`, { type: "json" }))
 })
 
-
- return { body: items}
+if(items.length > 3){
+   return { body: items}
 }
+}
+ 
 
   /**platform.env.TUMBNAILS.get(values.keys[0].name, { type: "json" })
  */
