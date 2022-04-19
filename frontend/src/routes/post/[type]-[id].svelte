@@ -21,6 +21,7 @@
 <script lang="ts">
 import { render as renderer } from 'datocms-structured-text-to-html-string'
 export let article;
+console.log(article);
 
 import Spliter from '../../lib/Spliter.svelte';
 
