@@ -9,7 +9,7 @@ await keys.forEach(async tumbnail => {
 
 export async function get({platform}) {
   // const values = await platform.env.TUMBNAILS.list();
-   let items = [];
+  
    let list = [
     {
       "name": "THE SQUAD | A Video By Calvin Millar"
@@ -31,11 +31,13 @@ export async function get({platform}) {
    items.push(await item)
    });  
 */
-
+ let items = [];
  list.forEach(async item => {
-   let stuff =  await platform.env.TUMBNAILS.get(item.name, { type: "json" })
-   items.push(stuff)
+    console.log(item.name);
+    
+   items.push(await platform.env.TUMBNAILS.get(`${item.name}`, { type: "json" }))
 })
+
 
  return { body: items}
 }
