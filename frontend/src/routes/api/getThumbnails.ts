@@ -8,5 +8,5 @@ return thumbnails
 
 export async function get({platform}) {
      const values = await platform.env.TUMBNAILS.list();
-     return {body: await platform.env.TUMBNAILS.get(values.keys[0],{type: "json"})}
+     return {body: await platform.env.TUMBNAILS.get(values.keys[0].name,{type: "json"})}
   }
