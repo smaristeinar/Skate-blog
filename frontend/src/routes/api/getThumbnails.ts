@@ -31,15 +31,10 @@ export async function get({platform}) {
    items.push(await item)
    });  
 */
- let items = [];
- list.forEach(async item => {
-    console.log(item.name);
-   items.push(await platform.env.TUMBNAILS.get(`${item.name}`, { type: "json" }))
-})
 
-if(items.length > 3){
-   return { body: items}
-}
+
+   return { body: platform.env.TUMBNAILS.get("thumbnails", { type: "json" })}
+
 }
  
 
