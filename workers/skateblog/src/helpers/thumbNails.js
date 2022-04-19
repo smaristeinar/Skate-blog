@@ -31,10 +31,8 @@ export async function thumbNails() {
 
     let datoResponse = await datoRequest.json()
     console.log("thumb", JSON.stringify(await datoResponse))
-
+    
     console.log(await datoResponse);
-    await datoResponse.data.allPosts.forEach(async post => {
-        await THUMBNAILS.put(post.title, JSON.stringify(post));
-        console.log(post)
-    });
+     THUMBNAILS.put("thumbnails", JSON.stringify(await datoResponse))
+
 }
