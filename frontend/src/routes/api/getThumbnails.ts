@@ -7,8 +7,8 @@ return thumbnails
 }
 
 export async function get({platform}) {
-     const values = await platform.env.TUMBNAILS.list();
-   return { body: await getThumbnails(values.keys,{platform})}
+   const values = await platform.env.TUMBNAILS.list();
+   return { body: await getThumbnails(await values.keys,{platform})}
   }
 
   /**platform.env.TUMBNAILS.get(values.keys[0].name, { type: "json" })
