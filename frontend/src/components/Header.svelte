@@ -25,8 +25,8 @@ function flipActive(){
 <div class="nav-menu" class:nav-menu-toggle={active} >
 <ul>
   <li><a on:click={()=>{flipActive()}} href="/">Home</a></li>
-  <li><a on:click={()=>{flipActive()}} href="/">Posts</a></li>
-  <li><a on:click={()=>{flipActive()}} href="/">Videos</a></li>
+  <li><a on:click={()=>{flipActive()}} href="/catagory/posts">Posts</a></li>
+  <li><a on:click={()=>{flipActive()}} href="/catagory/videos">Videos</a></li>
 </ul>
 </div>
 

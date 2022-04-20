@@ -1,9 +1,12 @@
 <script context="module">
-
-
  export async function load({fetch, params}) {
-    console.log("loading");
-    const url = "/api/getmock-" + params.id;
+    let url 
+    if(params.type == "video"){
+      url = "/api/getVideo-" + params.id
+    }else{
+      url= "/api/getPost-" + params.id
+    }
+
     const response = await fetch(url);
     return {
       props: {
@@ -16,6 +19,7 @@
 <script lang="ts">
 import { render as renderer } from 'datocms-structured-text-to-html-string'
 export let article;
+console.log(article);
 
 import Spliter from '../../lib/Spliter.svelte';
 
@@ -45,28 +49,28 @@ const options = {
 
 
 <article>
-  {#if article.data.post.video}
+  {#if article.video}
   <div class="video-wrapper">
-  <iframe class="video" src="https://www.youtube.com/embed/{article.data.post.videoLink.providerUid}"  height="400" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="video" src="https://www.youtube.com/embed/{article.videoLink.providerUid}"  height="400" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   {/if}
 
 <div class="title">
-<h1>{article.data.post.title}</h1>
- <p>{formatDate(article.data.post.createdAt)} | SkateBlog </p>
+<h1>{article.title}</h1>
+ <p>{formatDate(article.createdAt)} | SkateBlog </p>
 </div>
 
 <Spliter />
 
 <div class="content">
-{@html renderer(article.data.post.post, options)}
+{@html renderer(article.post, options)}
 </div>
 
 <Spliter />
 <div class="tags-wrapper">
 <div class="tags">
 <p>Tags:</p>
- {#each article.data.post.tags as tag}
+ {#each article.tags as tag}
   <p class="tag">#{tag}</p> 
  {/each}
 </div>

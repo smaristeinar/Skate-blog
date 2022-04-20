@@ -1,4 +1,4 @@
-async function fetchData(id:any){
+/*async function fetchData(id:any){
   const datoToken = '45d3feff8f1aa49044bf21b6aab5bc'
   const datoUrl = 'https://graphql.datocms.com/'
   const datoQuery = `
@@ -43,8 +43,30 @@ async function fetchData(id:any){
   const datoCMSResponse: any = await datoRequest.json()
 
 return await datoCMSResponse
-}
+}*/
 
-export async function get({ params }) {
-   return {body: await fetchData(params.post)} 
+/*function getPost({params}, id){
+  if(params.type == "post"){
+    post = await platform.env.POSTS.get(`${params.post}`, { type: 'json' });
+    return {body: await post}
+  }
+
+  else{
+    post = await platform.env.VIDEOS.get(`${params.post}`, { type: 'json' })
+    return {body: await post}
+  } 
+}*/
+
+export async function get({params,platform}) {
+  let post = {}
+  if(params.type == "post"){
+    post = await platform.env.POSTS.get(`${params.post}`, { type: 'json' });
+  }
+
+ /* else{
+    post = await platform.env.VIDEOS.get(`${params.post}`, { type: 'json' })
+    return {body: await post}
+  }*/ 
+
+   return {body: post}
 }
