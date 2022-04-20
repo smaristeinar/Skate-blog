@@ -4,7 +4,7 @@
 		const response = await fetch(url); 
         const jsondata = await response.json()
         let data = jsondata.data.allPosts.filter((item) => {
-		if (catagory == 'videos') {
+		if (params.cat == 'videos') {
 			return item.video == true;
 		} else {
 			return !item.video;
