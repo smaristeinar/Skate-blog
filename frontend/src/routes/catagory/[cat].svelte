@@ -60,7 +60,7 @@
     .title{
         display: flex;
         justify-content: flex-start;
-        width: 100%;
+        width: 95%;
         padding: 10px;
         
     }
