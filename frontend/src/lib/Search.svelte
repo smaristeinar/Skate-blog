@@ -25,7 +25,7 @@
 		<div class="resaults">
 		    <ul>
                {#each resaults as resault}
-               <a href="/post/{resault.id}" on:click={()=>{resaults = []}}>
+               <a href="/post/{resault.video ? "video-": "post-"}{resault.id}" on:click={()=>{resaults = []}}>
                    <li>
                        <div class="resault">
                            <img width="200px" height="150px" src="{resault.video ? resault.videoLink.thumbnailUrl : resault.thumbnail.url}" alt="">

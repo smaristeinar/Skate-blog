@@ -1,6 +1,6 @@
 <script context="module">
 	export async function load({ fetch, params }) {
-		const url = '/api/getmockdata';
+		const url = '/api/getThumbnails';
 		const response = await fetch(url); 
 		return {
 			props: {
@@ -23,7 +23,6 @@
 		}
 	});
 
-	console.log(data, '---Sorted data---');
 </script>
 
 <div class="title">
@@ -37,7 +36,7 @@
 <div class="resaults">
 	<ul>
 		{#each data as resault}
-			<a href="/post/{resault.id}">
+			<a href="/post/{resault.video ? "video-": "post-"}{resault.id}">
 				<li>
 					<div class="resault">
 						<img

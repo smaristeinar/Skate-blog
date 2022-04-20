@@ -3,7 +3,7 @@
 </script>
 
 <div class="fetaure-post">
-	<a href="/post/{post.id}">
+	<a href="/post/{post.video ? "video-": "post-"}{post.id}">
 		<img
 			src={post.video ? post.videoLink.thumbnailUrl : post.thumbnail.url}
 			class="thumbnail"
