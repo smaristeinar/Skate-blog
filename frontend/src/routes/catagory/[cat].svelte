@@ -2,7 +2,8 @@
 	export async function load({ fetch, params }) {
 		const url = '/api/getThumbnails';
 		const response = await fetch(url); 
-        let data = response.json().data.allPosts.filter((item) => {
+        const jsondata = await response.json()
+        let data = jsondata.data.allPosts.filter((item) => {
 		if (catagory == 'videos') {
 			return item.video == true;
 		} else {
