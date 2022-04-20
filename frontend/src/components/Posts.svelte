@@ -23,6 +23,11 @@ section{
    grid-template-columns: 1fr 1fr;
 }
 
+section:first-child{
+display: none;
+visibility: collapse;
+}
+
 
 }
 
