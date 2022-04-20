@@ -2,9 +2,16 @@
 	export async function load({ fetch, params }) {
 		const url = '/api/getThumbnails';
 		const response = await fetch(url); 
+        let data = response.json().data.allPosts.filter((item) => {
+		if (catagory == 'videos') {
+			return item.video == true;
+		} else {
+			return !item.video;
+		}});
+
 		return {
 			props: {
-				article: await response.json(),
+				article: await data,
 				catagory: await params.cat
 			}
 		};
@@ -15,13 +22,6 @@
 	export let article;
 	export let catagory;
     import Spliter from '../../lib/Spliter.svelte';
-	let data = article.data.allPosts.filter((item) => {
-		if (catagory == 'videos') {
-			return item.video == true;
-		} else {
-			return !item.video;
-		}
-	});
 
 </script>
 
@@ -35,7 +35,7 @@
 <Spliter />
 <div class="resaults">
 	<ul>
-		{#each data as resault}
+		{#each article as resault}
 			<a href="/post/{resault.video ? "video-": "post-"}{resault.id}">
 				<li>
 					<div class="resault">
