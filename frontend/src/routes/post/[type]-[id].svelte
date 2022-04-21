@@ -44,7 +44,6 @@ const options = {
     return renderNode('', {}, renderNode('img', { src: record.image[0].url }));
   }
 };
-
 </script>
 
 
