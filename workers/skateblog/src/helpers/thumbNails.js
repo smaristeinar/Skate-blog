@@ -30,9 +30,7 @@ export async function thumbNails() {
     })
 
     let datoResponse = await datoRequest.json()
-    console.log("thumb", JSON.stringify(await datoResponse))
     
-    console.log(await datoResponse);
      THUMBNAILS.put("thumbnails", JSON.stringify(await datoResponse))
 
 }

@@ -6,8 +6,7 @@
 		const url = '/api/getsearch-' + value;
 		const response = await fetch(url);
 		let items = await response.json();
-		resaults = await items.data.allPosts;
-        console.log(resaults);
+		resaults = await items.data.allPosts; 
 	}
 </script>
 

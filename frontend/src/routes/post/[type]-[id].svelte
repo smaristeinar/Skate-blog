@@ -17,15 +17,14 @@
 </script>
 
 <script lang="ts">
-import { render as renderer } from 'datocms-structured-text-to-html-string'
+import { render as renderer } from 'datocms-structured-text-to-html-string' //takes in structured text elemetn from datocms and creates html format from it.
 export let article;
-console.log(article);
 
 import Spliter from '../../lib/Spliter.svelte';
 
 
 
-const formatDate = (date) => {
+const formatDate = (date) => { // takes in a date value and returns it in a readable format
   let d = new Date(date);
   let month = (d.getMonth() + 1).toString();
   let day = d.getDate().toString();
@@ -40,7 +39,7 @@ const formatDate = (date) => {
 }
 
 const options = {
-  renderBlock({ record, adapter: { renderNode } }) {
+  renderBlock({ record, adapter: { renderNode } }) { //tells the renderer to add the source url to image elements
     return renderNode('', {}, renderNode('img', { src: record.image[0].url }));
   }
 };

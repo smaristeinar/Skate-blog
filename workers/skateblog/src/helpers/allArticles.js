@@ -37,13 +37,9 @@ export async function allArticles(){
     })
   
     let datoResponse =  await datoRequest.json() 
-    console.log(await datoResponse);
     await datoResponse.data.allPosts.forEach(post => {
-      console.log(post.video)
       if(post.video){
          VIDEOS.put(post.id, JSON.stringify(post));
-          console.log(post.id, post, "bing bong");
-          console.log("---------------------------------------------")
       }
       else{
        POSTS.put(post.id, JSON.stringify(post)) 

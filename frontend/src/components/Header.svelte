@@ -6,7 +6,6 @@
  import Search from "../lib/Search.svelte"
 
 function flipActive(){
-  console.log(window.matchMedia("(min-width: 1024px)"));
   if(!window.matchMedia("(min-width: 1024px)").matches){
     active = !active
   }
